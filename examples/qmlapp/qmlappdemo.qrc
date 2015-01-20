@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>content/ScrollBar.qml</file>
+        <file>content/TextArea.qml</file>
+        <file>content/TextBase.qml</file>
+        <file>content/TextField.qml</file>
+        <file>DejaVuSans.ttf</file>
+        <file>Main.qml</file>
+        <file>MainContainer.qml</file>
+    </qresource>
+</RCC>
