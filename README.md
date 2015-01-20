@@ -1,2 +1,6 @@
 # QtFreeVirtualKeyboard
-A QML based on screen virtual keyboard for embedded QML applications
+A QML based on screen virtual keyboard for embedded QML applications.
+
+As soon as you implement your first QML application for an embedded touchscreen device, you will notice, that the open source version of Qt lacks a virtual on screen keyboard. I'm an experienced QT developer, but I'm a complete newbie when it comes to QML programming. I'm a great fan of the Beaglebone Black embedded Linux device and I just ordered a capacitive touchscreen device for my bone. I started learning QML to create an example application for my Beaglebone. I quickly noticed that an important essential piece was missing for entering text and values: a virtual on screen keyboard for embedded QML applications - that means for applications without X11 or Wayland.
+
+There is a nice solution for Qt Enterprise version: [Qt Virtual Keyboard](http://doc.qt.io/QtVirtualKeyboard/index.html). This page also comes with a nice [technical guide](http://doc.qt.io/QtVirtualKeyboard/technical-guide.html) that shows how they implemented the virtual keyboard. They implemented QPlatformInputContextPlugin and QPlatformInputContext interfaces. I googled a little bit to find a similar open source solution and found the fantastic blog post from [Tomasz Olszak](http://tolszak-dev.blogspot.de/2013/04/qplatforminputcontext-and-virtual.html). He did a virtual keyboard mockup for Qt applications on systems with a window manager (Windows or Linux Desktop).
