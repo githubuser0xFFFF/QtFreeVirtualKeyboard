@@ -88,6 +88,6 @@ Item {
 
         text = keybutton.text;
         font.family = keybutton.font.family
-        visible = Qt.binding(function() {return keybutton.isPressed});
+        visible = Qt.binding(function() {return keybutton.isHighlighted});
     }
 }

@@ -33,16 +33,32 @@ Item {
     property alias isPressed: buttonMouseArea.pressed
 
     /**
-     * This property holds a refernce to the input panel.
+     * This property holds a reference to the input panel.
      * A key can only show the charcter preview popup if this property contains
      * a valid refernce to the input panel
      */
     property var inputPanel
 
     /**
+     * This property holds the highlighted status of the key
+     * The highlighted status is a little bit different from the pressed status
+     * If the user releases the key, it is not pressed anymore, but it is still
+     * highlighted for some milliseconds
+     */
+    property bool isHighlighted: false
+
+    /**
      * Sets the show preview attribute for the charcter preview key popup
      */
     property bool showPreview: true
+
+    /**
+     * Sets the key repeat attribute.
+     * If the repeat is enabled, the key will repeat the input events while held down.
+     * The default is false.
+     */
+    property bool repeat: false
+
     signal clicked()
     signal pressed()
     signal released()
@@ -50,7 +66,7 @@ Item {
     Rectangle {
         anchors.fill: parent
         radius: height / 30
-        color: buttonMouseArea.pressed ? Qt.tint(root.color, "#801e6fa7") : root.color
+        color: isHighlighted ? Qt.tint(root.color, "#801e6fa7") : root.color
         Text {
             id: txt
             color: "white"
@@ -70,6 +86,28 @@ Item {
         }
     }
 
+    Timer {
+        id: highlightTimer
+        interval: 100
+        running: !isPressed
+        repeat: false
+
+        onTriggered: {
+            isHighlighted = false;
+        }
+    }
+
+    Timer {
+        id: repeatTimer
+        interval: 100
+        repeat: true
+        running: root.repeat && root.isPressed
+
+        onTriggered: {
+
+        }
+    }
+
     onInputPanelChanged: {
         console.log("onInputPanelChanged: " + inputPanel.objectName);
     }
@@ -84,5 +122,6 @@ Item {
         {
             inputPanel.showKeyPopup(root);
         }
+        isHighlighted = true;
     }
 }
