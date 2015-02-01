@@ -99,12 +99,20 @@ Item {
 
     Timer {
         id: repeatTimer
-        interval: 100
+        interval: 500
         repeat: true
         running: root.repeat && root.isPressed
 
         onTriggered: {
-
+            if (root.state == "")
+            {
+                root.state = "REPEATING"
+                console.log("switching to repeating");
+            }
+            else if (root.state == "REPEATING")
+            {
+                console.log("repeating");
+            }
         }
     }
 
@@ -124,4 +132,15 @@ Item {
         }
         isHighlighted = true;
     }
+
+    onReleased: {
+        state = ""
+    }
+
+    states: [
+        State {
+            name: "REPEATING"
+            PropertyChanges { target: repeatTimer; interval: 100}
+        }
+    ]
 }

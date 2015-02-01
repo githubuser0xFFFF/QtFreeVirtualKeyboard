@@ -7,5 +7,11 @@
         <file>DejaVuSans.ttf</file>
         <file>Main.qml</file>
         <file>MainContainer.qml</file>
+        <file>MainQuickControls.qml</file>
+        <file>MainDesigner.qml</file>
+        <file>TextFieldFlatStyle.qml</file>
+        <file>SliderFlatStyle.qml</file>
+        <file>ProgressBarFlatStyle.qml</file>
+        <file>Syringe.qml</file>
     </qresource>
 </RCC>

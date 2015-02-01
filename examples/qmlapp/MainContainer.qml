@@ -35,7 +35,7 @@ Rectangle {
         height: parent.height
         anchors.centerIn: parent
         //anchors.horizontalCenterOffset: 5
-        Main {
+        MainQuickControls {
             id: mainQml
             anchors.left: parent.left
             anchors.top: parent.top

@@ -148,6 +148,7 @@ Item {
                     text: "\uf177"
                     onClicked: InputEngine.sendKeyToFocusItem("\x7F")
                     inputPanel: root
+                    repeat: true
                 }
             }
             Row {

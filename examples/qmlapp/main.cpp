@@ -33,10 +33,12 @@ int main(int argc, char *argv[])
     app.setObjectName("QGuiApplication");
 
     QQuickView view;
-    view.setSource(QString("qrc:/MainContainer.qml"));
+    //view.setSource(QString("qrc:/MainContainer.qml"));
+    view.setSource(QString("MainContainer.qml"));
     view.setObjectName("QQuickView");
     view.setResizeMode(QQuickView::SizeRootObjectToView);
     view.engine()->setObjectName("QQuickEngine");
+    view.engine()->addImportPath(qApp->applicationDirPath());
 
     // Set size to 800 x 480 WXGA - this is the size of the upcoming Manga
     // screen.

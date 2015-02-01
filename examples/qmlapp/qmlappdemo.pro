@@ -18,3 +18,4 @@ OTHER_FILES += \
     Main.qml \
     MainContainer.qml
 
+DESTDIR = $$PWD
