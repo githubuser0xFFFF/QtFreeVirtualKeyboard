@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import VirtualKeyboard 1.0
 
 /**
  * This is the type implements one single key button in the InputPanel
@@ -13,9 +14,9 @@ Item {
     property color color: "#35322f"
 
     /**
-     * The text to show in this button
+     * The key text to show in this button
      */
-    property alias text: txt.text
+    property string text
 
     /**
      * The font for rendering of text
@@ -48,7 +49,7 @@ Item {
     property bool isHighlighted: false
 
     /**
-     * Sets the show preview attribute for the charcter preview key popup
+     * Sets the show preview attribute for the character preview key popup
      */
     property bool showPreview: true
 
@@ -58,6 +59,22 @@ Item {
      * The default is false.
      */
     property bool repeat: false
+
+    /**
+     * Sets the key code for input method processing.
+     */
+    property int key
+
+    /**
+     * Sets the display text - this string is rendered in the keyboard layout.
+     * The default value is the key text.
+     */
+    property alias displayText: txt.text
+
+    /**
+     * Sets the function key attribute.
+     */
+    property bool functionKey: false
 
     signal clicked()
     signal pressed()
@@ -76,6 +93,7 @@ Item {
             font.pixelSize: height
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
+            text: root.text
         }
         MouseArea {
             id: buttonMouseArea
@@ -113,6 +131,11 @@ Item {
             {
                 console.log("repeating");
             }
+
+            if (!functionKey)
+            {
+                InputEngine.sendKeyToFocusItem(text)
+            }
         }
     }
 
@@ -135,6 +158,11 @@ Item {
 
     onReleased: {
         state = ""
+        console.log("onReleased - functionKey = " + functionKey)
+        if (!functionKey)
+        {
+            InputEngine.sendKeyToFocusItem(text)
+        }
     }
 
     states: [

@@ -86,7 +86,7 @@ Item {
             x = PopupLeft;
         }
 
-        text = keybutton.text;
+        text = keybutton.displayText;
         font.family = keybutton.font.family
         visible = Qt.binding(function() {return keybutton.isHighlighted});
     }

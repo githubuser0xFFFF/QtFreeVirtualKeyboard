@@ -82,14 +82,14 @@ Rectangle {
                     style: TextFieldFlatStyle {}
                     width: grid.width - x
                     placeholderText: "Volume (ml)"
-                    inputMethodHints: Qt.ImhFormattedNumbersOnly
+                    //inputMethodHints: Qt.ImhFormattedNumbersOnly
                     text: "0"
-                    validator: DoubleValidator {
+                    /*validator: DoubleValidator {
                         bottom: 0;
                         top: 2000;
                         notation: DoubleValidator.StandardNotation
                         decimals: 3
-                    }
+                    }*/
                 }
 
                 // 2nd row ----------------------

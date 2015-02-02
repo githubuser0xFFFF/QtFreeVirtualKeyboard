@@ -41,7 +41,7 @@ Item {
             width: pimpl.buttonWidth
             height: pimpl.rowHeight
             text: (pimpl.shiftModifier) ? letter.toUpperCase() : (pimpl.symbolModifier)?firstSymbol : letter
-            onClicked: InputEngine.sendKeyToFocusItem(text)
+            //onClicked: InputEngine.sendKeyToFocusItem(text)
             inputPanel: root
         }
     }
@@ -120,6 +120,7 @@ Item {
                     height: pimpl.rowHeight
                     font.family: "FontAwesome"
                     text: "\uf062"
+                    functionKey: true
                     onClicked: {
                         if (pimpl.symbolModifier) {
                             pimpl.symbolModifier = false
@@ -145,8 +146,10 @@ Item {
                     anchors.right: parent.right
                     width: 1.25*pimpl.buttonWidth
                     height: pimpl.rowHeight
-                    text: "\uf177"
-                    onClicked: InputEngine.sendKeyToFocusItem("\x7F")
+                    text: "\x7F"
+                    displayText: "\uf177"
+                    //functionKey: true
+                    //onClicked: InputEngine.sendKeyToFocusItem("\x7F")
                     inputPanel: root
                     repeat: true
                 }
@@ -162,6 +165,7 @@ Item {
                     height: pimpl.rowHeight
                     font.family: "FontAwesome"
                     text: "\uf078"
+                    functionKey: true
                     onClicked: {
                         Qt.inputMethod.hide()
                     }
@@ -174,6 +178,7 @@ Item {
                     height: pimpl.rowHeight
                     text: ""
                     inputPanel: root
+                    functionKey: true
                 }
                 KeyButton {
                     width: pimpl.buttonWidth
@@ -187,7 +192,7 @@ Item {
                     width: 3*pimpl.buttonWidth
                     height: pimpl.rowHeight
                     text: " "
-                    onClicked: InputEngine.sendKeyToFocusItem(text)
+                    //onClicked: InputEngine.sendKeyToFocusItem(text)
                     inputPanel: root
                     showPreview: false
                 }
@@ -195,7 +200,7 @@ Item {
                     width: pimpl.buttonWidth
                     height: pimpl.rowHeight
                     text: "."
-                    onClicked: InputEngine.sendKeyToFocusItem(text)
+                    //onClicked: InputEngine.sendKeyToFocusItem(text)
                     inputPanel: root
                 }
                 KeyButton {
@@ -204,6 +209,7 @@ Item {
                     width: 1.25*pimpl.buttonWidth
                     height: pimpl.rowHeight
                     text: (!pimpl.symbolModifier)? "12#" : "ABC"
+                    functionKey: true
                     onClicked: {
                         if (pimpl.shiftModifier) {
                             pimpl.shiftModifier = false
@@ -218,6 +224,7 @@ Item {
                     width: 1.25*pimpl.buttonWidth
                     height: pimpl.rowHeight
                     text: "Enter"
+                    functionKey: true
                     onClicked: InputEngine.sendKeyToFocusItem("\n")
                     inputPanel: root
                 }
