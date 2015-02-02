@@ -13,5 +13,7 @@
         <file>SliderFlatStyle.qml</file>
         <file>ProgressBarFlatStyle.qml</file>
         <file>Syringe.qml</file>
+        <file>ButtonFlatStyle.qml</file>
+        <file>FontAwesome.otf</file>
     </qresource>
 </RCC>

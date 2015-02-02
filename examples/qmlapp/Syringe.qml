@@ -18,14 +18,16 @@ Item {
     ProgressBar {
         id: progressBar
         anchors.left: parent.left
-        anchors.leftMargin: 70
+        anchors.leftMargin: Math.round(
+            (syringeImage.width - syringeImage.paintedWidth) / 2 + syringeImage.paintedWidth * 0.125)
         anchors.right: parent.right
-        anchors.rightMargin: 70
+        anchors.rightMargin: Math.round(
+            (syringeImage.width - syringeImage.paintedWidth) / 2 + syringeImage.paintedWidth * 0.13)
         anchors.verticalCenter: parent.verticalCenter
-        height: 80
+        height: syringeImage.height * 0.65
         minimumValue: 0
         maximumValue: 100
-        value: 70
+        value: 100
         style: syringeProgressBarStyle
         z: 0
     }

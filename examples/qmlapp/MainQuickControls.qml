@@ -9,6 +9,10 @@ Rectangle {
     height: parent.height
     color: "white"
 
+    FontLoader {
+        source: "FontAwesome.otf"
+    }
+
     Flickable {
         id: flickable
         anchors.fill: parent
@@ -24,10 +28,35 @@ Rectangle {
             width: flickable.width - 26
             height: syringe.implicitHeight
 
-            Syringe {
+            Row {
                 id: syringe
-                anchors.horizontalCenter: parent.horizontalCenter
-                width: parent.width * 0.7
+                anchors.left: content.left
+                anchors.right: content.right
+                Button {
+                    id: emptyButton
+                    text: "\uf049"
+                    width: content.width * 0.1
+                    height: parent.height
+                    style: ButtonFlatStyle {
+                        font.family: "FontAwesome"
+                        font.pixelSize: 40
+                    }
+                }
+
+                Syringe {
+                    width: content.width * 0.8
+                }
+
+                Button {
+                    id: refillButton
+                    text: "\uf050"
+                    width: content.width * 0.1
+                    height: parent.height
+                    style: ButtonFlatStyle {
+                        font.family: "FontAwesome"
+                        font.pixelSize: 40
+                    }
+                }
             }
 
 
@@ -54,6 +83,7 @@ Rectangle {
                     width: grid.width - x
                     placeholderText: "Volume (ml)"
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
+                    text: "0"
                     validator: DoubleValidator {
                         bottom: 0;
                         top: 2000;
@@ -73,6 +103,12 @@ Rectangle {
                     width: grid.width - x
                     placeholderText: "Flow (ml/s)"
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
+                    validator: DoubleValidator {
+                        bottom: 0;
+                        top: 2000;
+                        notation: DoubleValidator.StandardNotation
+                        decimals: 3
+                    }
                 }
 
                 // 3rd row ----------------------
@@ -88,6 +124,9 @@ Rectangle {
                     maximumValue: 100
                     value: 30
                     style: SliderFlatStyle {}
+                    onValueChanged: {
+                        flowTextField.text = value
+                    }
                 }
             }
         }

@@ -1,2 +1,5 @@
 build
 /src/virtualkeyboard.pro.user
+/examples/qmlapp/qmlappdemo.pro.user.3.3-pre1
+/examples/qmlapp/*.exe
+/examples/qmlapp/qmlappdemo.pro.user
