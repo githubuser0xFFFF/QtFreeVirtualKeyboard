@@ -6,6 +6,9 @@ import "."
 Item {
     id: root
     implicitHeight: syringeImage.height
+    property alias maximumLevel: progressBar.maximumValue
+    property alias minimumLevel: progressBar.minimumValue
+    property alias level: progressBar.value
 
     Image {
         id: syringeImage
@@ -25,9 +28,6 @@ Item {
             (syringeImage.width - syringeImage.paintedWidth) / 2 + syringeImage.paintedWidth * 0.13)
         anchors.verticalCenter: parent.verticalCenter
         height: syringeImage.height * 0.65
-        minimumValue: 0
-        maximumValue: 100
-        value: 100
         style: syringeProgressBarStyle
         z: 0
     }

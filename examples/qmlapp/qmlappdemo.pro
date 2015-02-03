@@ -3,9 +3,18 @@ TARGET = virtualkeyboardqmldemo
 QT += qml quick
 SOURCES += main.cpp
 CONFIG += link_pkgconfig
-TARGETPATH = $$[QT_INSTALL_EXAMPLES]/virtualkeyboard
-target.path = $$TARGETPATH
-INSTALLS += target
+
+
+linux-buildroot-g++ {
+    deployment.files = *.qml *.otf *.ttf *.svg
+    target.path = /vktest
+    deployment.path = /vktest
+    INSTALLS += target deployment
+} else {
+    target.path = $$[QT_INSTALL_PLUGINS]/virtualkeyboard
+    INSTALLS += target
+}
+
 
 RESOURCES += \
     qmlappdemo.qrc
