@@ -48,6 +48,18 @@ Component {
                 y: 2
                 z: 9
             }
+
+            Rectangle {
+                id: glow
+                width: foreground.width * 1.6
+                height: foreground.height * 1.6
+                border.color: "#328930"
+                border.width: 2
+                anchors.centerIn: foreground
+                radius: Math.round(height / 2)
+                color: "#2F5caa15"
+                visible: control.pressed
+            }
         }
     }
 }
