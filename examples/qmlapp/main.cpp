@@ -11,9 +11,11 @@
 #include <QQuickView>
 #include <QGuiApplication>
 #include <QQmlEngine>
+#include <QQmlContext>
 #include <QFont>
 #include <QFontDatabase>
 #include <QDebug>
+#include <QScreen>
 
 
 /**
@@ -34,6 +36,8 @@ int main(int argc, char *argv[])
 
     QQuickView view;
     //view.setSource(QString("qrc:/MainContainer.qml"));
+    view.engine()->rootContext()->setContextProperty("screenPixelDensity",
+        QGuiApplication::primaryScreen()->physicalDotsPerInch());
     view.setSource(QString("MainContainer.qml"));
     view.setObjectName("QQuickView");
     view.setResizeMode(QQuickView::SizeRootObjectToView);

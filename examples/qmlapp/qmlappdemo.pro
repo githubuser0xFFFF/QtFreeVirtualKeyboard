@@ -28,3 +28,7 @@ OTHER_FILES += \
     MainContainer.qml
 
 DESTDIR = $$PWD
+
+DISTFILES += \
+    StyleHelper.aml \
+    Style.qml

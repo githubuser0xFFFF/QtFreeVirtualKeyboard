@@ -26,16 +26,16 @@ Rectangle {
 
         Item {
             id: content
-            x: 20
-            y: 20
-            width: flickable.width - 42
+            x: Style.dp(20)
+            y: Style.dp(20)
+            width: flickable.width - Style.dp(42)
             //height: syringeRow.implicitHeight + grid.implicitHeight
 
             Row {
                 id: syringeRow
                 anchors.left: content.left
                 anchors.right: content.right
-                height: 160
+                height: Style.dp(160)
                 //spacing: 10
                 Button {
                     id: emptyButton
@@ -44,7 +44,7 @@ Rectangle {
                     height: parent.height
                     style: ButtonFlatStyle {
                         font.family: "FontAwesome"
-                        font.pixelSize: 60
+                        font.pixelSize: Style.dp(60)
                     }
 
                     onPressedChanged: {
@@ -71,7 +71,7 @@ Rectangle {
                     height: parent.height
                     style: ButtonFlatStyle {
                         font.family: "FontAwesome"
-                        font.pixelSize: 60
+                        font.pixelSize: Style.dp(60)
                     }
 
                     onPressedChanged: {
@@ -88,12 +88,12 @@ Rectangle {
                 columns: 2
                 verticalItemAlignment: Grid.AlignVCenter
                 horizontalItemAlignment: Grid.AlignLeft
-                columnSpacing: 10
-                rowSpacing: 20
+                columnSpacing: Style.dp(10)
+                rowSpacing: Style.dp(20)
                 anchors.left: content.left
                 anchors.right: content.right
                 anchors.top: syringeRow.bottom
-                anchors.topMargin: 20
+                anchors.topMargin: Style.dp(20)
 
                 // 1st rot ----------------------
                 Label {
@@ -157,8 +157,8 @@ Rectangle {
                 // 3rd row ----------------------
                 Rectangle {
                     id: dumy
-                    width: 10
-                    height: 10
+                    width: Style.dp(10)
+                    height: Style.dp(10)
                 }
 
                 Slider {

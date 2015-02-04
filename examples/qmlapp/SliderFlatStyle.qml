@@ -1,6 +1,7 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.2
 import QtQuick.Controls.Styles 1.2
+import "."
 
 
 Component {
@@ -10,8 +11,8 @@ Component {
             color: "#c9c9c9"
             radius: Math.round(height / 2)
             border.color: "#c9c9c9"
-            border.width: 1.4
-            height: 8
+            border.width: Style.dp(2)
+            height: Style.dp(8)
 
             Rectangle {
                 color: "#5caa15"
@@ -24,14 +25,14 @@ Component {
         }
 
         handle: Item {
-            implicitWidth: 45
-            implicitHeight: 45
+            implicitWidth: Style.dp(45)
+            implicitHeight: Style.dp(45)
             Rectangle {
                 id: foreground
                 color: "white"
                 radius: Math.round(height / 2)
                 border.color: !control.pressed ? "#999999" : "#328930"
-                border.width: 1.4
+                border.width: Style.dp(2)
                 anchors.fill: parent
                 z: 10
             }
@@ -44,8 +45,8 @@ Component {
                 border.width: 0
                 width: foreground.width
                 height: foreground.height
-                x: 2
-                y: 2
+                x: foreground.x + 2
+                y: foreground.y + 2
                 z: 9
             }
 
@@ -54,7 +55,7 @@ Component {
                 width: foreground.width * 1.7
                 height: foreground.height * 1.7
                 border.color: "#328930"
-                border.width: 2
+                border.width: Style.dp(2)
                 anchors.centerIn: foreground
                 radius: Math.round(height / 2)
                 color: "#2F5caa15"
