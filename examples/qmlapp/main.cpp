@@ -42,8 +42,8 @@ int main(int argc, char *argv[])
 
     // Set size to 800 x 480 WXGA - this is the size of the upcoming Manga
     // screen.
-    view.setWidth(800);
-    view.setHeight(480);
+    view.setWidth(1280);
+    view.setHeight(800);
 
     view.show();
 

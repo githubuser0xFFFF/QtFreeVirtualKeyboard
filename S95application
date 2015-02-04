@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# mount 3rd partition of SD card into userdata directory and start application
+# mount with sync option to disable write cache because user may simply switch 
+# off the device
+#mount -o sync,noatime /dev/mmcblk0p3 /ledarray/userdata
+cd /vktest
+./virtualkeyboardqmldemo &

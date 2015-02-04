@@ -168,7 +168,7 @@ Item {
     states: [
         State {
             name: "REPEATING"
-            PropertyChanges { target: repeatTimer; interval: 100}
+            PropertyChanges { target: repeatTimer; interval: 50}
         }
     ]
 }

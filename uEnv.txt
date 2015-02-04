@@ -1,0 +1,17 @@
+##Use this file if you want to boot from SD card on a Debian system
+# uncomment the following lines if you need static ip
+ethaddr=90:59:AF:82:3A:D1
+ipaddr=192.168.81.10
+serverip=192.168.81.1
+gatewayip=192.168.81.1
+netmask=255.255.255.0
+hostname=bbb
+
+optargs=quiet lpj=1818624 drm.debug=7
+mmcboot=echo Booting from mmc ... (uk); run mmcargs; bootz ${loadaddr} - ${fdtaddr}
+loadzimage=echo Loading zImage ... (uk); load mmc 0:2 ${loadaddr} /boot/zImage
+loadfdt=load mmc 0:2 ${fdtaddr} /boot/${fdtfile}
+#setbootargs=setenv bootargs console=${console} ${optargs} root=${mmcroot} rootfstype=${mmcrootfstype} ip=${ipaddr}:${serverip}:${gatewayip}:${netmask}:${hostname}:eth0
+mmcargs=setenv bootargs console=${console} ${optargs} ${cape_disable} ${cape_enable} root=${mmcroot} rootfstype=${mmcrootfstype} ${cmdline} ip=${ipaddr}:${serverip}:${gatewayip}:${netmask}:${hostname}:eth0
+uenvcmd=if run loadzimage; then run loadfdt;run mmcboot;fi;
+

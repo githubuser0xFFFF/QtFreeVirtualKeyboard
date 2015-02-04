@@ -26,23 +26,25 @@ Rectangle {
 
         Item {
             id: content
-            x: 12
+            x: 20
             y: 20
-            width: flickable.width - 26
-            height: syringeRow.implicitHeight
+            width: flickable.width - 42
+            //height: syringeRow.implicitHeight + grid.implicitHeight
 
             Row {
                 id: syringeRow
                 anchors.left: content.left
                 anchors.right: content.right
+                height: 160
+                //spacing: 10
                 Button {
                     id: emptyButton
                     text: "\uf049"
-                    width: content.width * 0.1
+                    width: content.width * 0.15
                     height: parent.height
                     style: ButtonFlatStyle {
                         font.family: "FontAwesome"
-                        font.pixelSize: 40
+                        font.pixelSize: 60
                     }
 
                     onPressedChanged: {
@@ -54,7 +56,8 @@ Rectangle {
 
                 Syringe {
                     id: syringe
-                    width: content.width * 0.8
+                    height: parent.height
+                    width: content.width * 0.7
                     minimumLevel: 0
                     maximumLevel: 10
                     level: maximumLevel / 2
@@ -64,11 +67,11 @@ Rectangle {
                 Button {
                     id: refillButton
                     text: "\uf050"
-                    width: content.width * 0.1
+                    width: content.width * 0.15
                     height: parent.height
                     style: ButtonFlatStyle {
                         font.family: "FontAwesome"
-                        font.pixelSize: 40
+                        font.pixelSize: 60
                     }
 
                     onPressedChanged: {
@@ -95,59 +98,59 @@ Rectangle {
                 // 1st rot ----------------------
                 Label {
                     text: "Level (ml):"
-                    font.pixelSize: 20
+                    font.pixelSize: levelTextField.font.pixelSize
                 }
                 TextField {
                     id: levelTextField
                     style: TextFieldFlatStyle {}
                     width: grid.width - x
-                    placeholderText: "Level (ml)"
+                    //placeholderText: "Level (ml)"
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                     text: syringe.level
                     validator: DoubleValidator {
                         bottom: syringe.minimumLevel;
                         top: syringe.maximumLevel;
                         notation: DoubleValidator.StandardNotation
-                        decimals: 3
+                        decimals: 6
                     }
                 }
 
                 // 1st rot ----------------------
                 Label {
                     text: "Volume (ml):"
-                    font.pixelSize: 20
+                    font.pixelSize: volumeTextField.font.pixelSize
                 }
                 TextField {
                     id: volumeTextField
                     style: TextFieldFlatStyle {}
                     width: grid.width - x
-                    placeholderText: "Volume (ml)"
+                    //placeholderText: "Volume (ml)"
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                     text: "0"
                     validator: DoubleValidator {
                         bottom: 0;
                         top: 2000;
                         notation: DoubleValidator.StandardNotation
-                        decimals: 3
+                        decimals: 6
                     }
                 }
 
                 // 2nd row ----------------------
                 Label {
                     text: "Flow (ml/s):"
-                    font.pixelSize: 20
+                    font.pixelSize: flowTextField.font.pixelSize
                 }
                 TextField {
                     id: flowTextField
                     style: TextFieldFlatStyle {}
                     width: grid.width - x
-                    placeholderText: "Flow (ml/s)"
+                    //placeholderText: "Flow (ml/s)"
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                     validator: DoubleValidator {
                         bottom: 0;
                         top: 2000;
                         notation: DoubleValidator.StandardNotation
-                        decimals: 3
+                        decimals: 6
                     }
                 }
 

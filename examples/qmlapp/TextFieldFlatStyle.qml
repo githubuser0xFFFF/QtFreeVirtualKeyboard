@@ -9,16 +9,16 @@ Component {
         id: textfieldstyle
         textColor: "#333333"
         placeholderTextColor: "#c9c9c9"
-        font.pixelSize: 20
+        font.pixelSize: 30
         background: Rectangle {
             color: "#00FFFFFF"
-            radius: 6
+            radius: Math.round(height / 8)
             border.color: "#c9c9c9"
             border.width: 1.4
             implicitHeight: textfieldstyle.font.pixelSize * 2.6
         }
-        padding.left: 20
-        padding.right: 20
+        padding.left: 30
+        padding.right: 30
     }
 }
 

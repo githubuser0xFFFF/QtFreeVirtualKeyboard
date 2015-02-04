@@ -26,15 +26,15 @@ Rectangle {
     color: "black"
     implicitWidth: mainQml.implicitWidth
     implicitHeight: mainQml.implicitHeight
-    onWidthChanged: console.log("3 Root item size: " + height + " " + width)
-    onHeightChanged: console.log("3 Root item size: " + height + " " + width)
+    //onWidthChanged: console.log("3 Root item size: " + height + " " + width)
+    //onHeightChanged: console.log("3 Root item size: " + height + " " + width)
     Item {
         clip: true
         id: appContainer
-        width: parent.width
-        height: parent.height
+        width: parent.width - 100
+        height: parent.height - 100
         anchors.centerIn: parent
-        //anchors.horizontalCenterOffset: 5
+        anchors.horizontalCenterOffset: 5
         MainQuickControls {
             id: mainQml
             anchors.left: parent.left

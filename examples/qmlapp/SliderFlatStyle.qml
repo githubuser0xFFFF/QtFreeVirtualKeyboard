@@ -8,14 +8,14 @@ Component {
     SliderStyle {
         groove: Rectangle {
             color: "#c9c9c9"
-            radius: 4
+            radius: Math.round(height / 2)
             border.color: "#c9c9c9"
             border.width: 1.4
             height: 8
 
             Rectangle {
                 color: "#5caa15"
-                radius: 4
+                radius: Math.round(height / 2)
                 anchors.left: parent.left
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom
@@ -24,8 +24,8 @@ Component {
         }
 
         handle: Item {
-            implicitWidth: 30
-            implicitHeight: 30
+            implicitWidth: 45
+            implicitHeight: 45
             Rectangle {
                 id: foreground
                 color: "white"
@@ -51,8 +51,8 @@ Component {
 
             Rectangle {
                 id: glow
-                width: foreground.width * 1.6
-                height: foreground.height * 1.6
+                width: foreground.width * 1.7
+                height: foreground.height * 1.7
                 border.color: "#328930"
                 border.width: 2
                 anchors.centerIn: foreground

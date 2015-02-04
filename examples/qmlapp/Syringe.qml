@@ -14,7 +14,7 @@ Item {
         id: syringeImage
         source: "syringe2.svg"
         fillMode: Image.PreserveAspectFit
-        width: parent.width
+        anchors.fill: parent
         z: 100
     }
 
