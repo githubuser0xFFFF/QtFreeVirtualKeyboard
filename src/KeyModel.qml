@@ -2,8 +2,10 @@ import QtQuick 2.0
 
 /**
  * This is quick and dirty model for the keys of the InputPanel *
- * The code has been copied from
+ * The code has been derived from
  * http://tolszak-dev.blogspot.de/2013/04/qplatforminputcontext-and-virtual.html
+ * Copyright 2015 Uwe Kindler
+ * Licensed under MIT see LICENSE.MIT in project root
  */
 Item {
     property QtObject firstRowModel: first
@@ -13,16 +15,16 @@ Item {
 
     ListModel {
         id:first
-        ListElement { letter: "q"; firstSymbol: "1"}
-        ListElement { letter: "w"; firstSymbol: "2"}
-        ListElement { letter: "e"; firstSymbol: "3"}
-        ListElement { letter: "r"; firstSymbol: "4"}
-        ListElement { letter: "t"; firstSymbol: "5"}
-        ListElement { letter: "y"; firstSymbol: "6"}
-        ListElement { letter: "u"; firstSymbol: "7"}
-        ListElement { letter: "i"; firstSymbol: "8"}
-        ListElement { letter: "o"; firstSymbol: "9"}
-        ListElement { letter: "p"; firstSymbol: "0"}
+        ListElement { letter: "q"; firstSymbol: "1"; keycode: Qt.Key_Q}
+        ListElement { letter: "w"; firstSymbol: "2"; keycode: Qt.Key_W}
+        ListElement { letter: "e"; firstSymbol: "3"; keycode: Qt.Key_E}
+        ListElement { letter: "r"; firstSymbol: "4"; keycode: Qt.Key_R}
+        ListElement { letter: "t"; firstSymbol: "5"; keycode: Qt.Key_T}
+        ListElement { letter: "y"; firstSymbol: "6"; keycode: Qt.Key_Y}
+        ListElement { letter: "u"; firstSymbol: "7"; keycode: Qt.Key_U}
+        ListElement { letter: "i"; firstSymbol: "8"; keycode: Qt.Key_I}
+        ListElement { letter: "o"; firstSymbol: "9"; keycode: Qt.Key_O}
+        ListElement { letter: "p"; firstSymbol: "0"; keycode: Qt.Key_E}
     }
     ListModel {
         id:second

@@ -4,8 +4,10 @@ import VirtualKeyboard 1.0
 
 /**
  * This is the QML input panel that provides the virtual keyboard UI
- * The code has been copied from
+ * The code has been derived from
  * http://tolszak-dev.blogspot.de/2013/04/qplatforminputcontext-and-virtual.html
+ * Copyright 2015 Uwe Kindler
+ * Licensed under MIT see LICENSE.MIT in project root
  */
 Item {
     id:root

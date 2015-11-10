@@ -3,6 +3,9 @@
 /// \author Uwe Kindler
 /// \date   08.01.2015
 /// \brief  Implementation of VirtualKeyboardInputContext
+///
+/// Copyright 2015 Uwe Kindler
+/// Licensed under MIT see LICENSE.MIT in project root
 //============================================================================
 
 //============================================================================

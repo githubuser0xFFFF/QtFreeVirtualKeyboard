@@ -4,6 +4,8 @@ import QtGraphicalEffects 1.0
 /**
  * This is the key popup that shows a character preview above the
  * pressed key button like it is known from keyboards on phones.
+ * Copyright 2015 Uwe Kindler
+ * Licensed under MIT see LICENSE.MIT in project root
  */
 /*Item {
     id: root
@@ -122,8 +124,9 @@ Item {
 
     Rectangle {
         id: shadow
-        width: root.width
-        height: root.height
+        width: popup.width
+        height: popup.height
+        radius: popup.radius
         color: "#3F000000"
         x: 4
         y: 4
