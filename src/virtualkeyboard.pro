@@ -8,7 +8,7 @@ QT       += qml quick quick-private gui-private
 
 CONFIG += plugin
 
-TARGET = VirtualKeyboard
+TARGET = freevirtualkeyboardplugin
 TEMPLATE = lib
 
 
@@ -24,10 +24,10 @@ HEADERS += VirtualKeyboardInputContextPlugin.h\
 deployment.files = *.qml FontAwesome.otf qmldir
 
 linux-buildroot-g++ {
-    deployment.path = /usr/qml/QtQuick/VirtualKeyboard
+    deployment.path = /usr/qml/QtQuick/FreeVirtualKeyboard
     target.path = /usr/lib/qt/plugins/platforminputcontexts
 } else {
-    deployment.path = $$[QT_INSTALL_QML]/QtQuick/VirtualKeyboard
+    deployment.path = $$[QT_INSTALL_QML]/QtQuick/FreeVirtualKeyboard
     target.path = $$[QT_INSTALL_PLUGINS]/platforminputcontexts
 }
 

@@ -11,7 +11,7 @@ linux-buildroot-g++ {
     deployment.path = /vktest
     INSTALLS += target deployment
 } else {
-    target.path = $$[QT_INSTALL_PLUGINS]/virtualkeyboard
+    target.path = $$[QT_INSTALL_EXAMPLES]/freevirtualkeyboard
     INSTALLS += target
 }
 

@@ -17,7 +17,7 @@
 ****************************************************************************/
 
 import QtQuick 2.0
-import QtQuick.VirtualKeyboard 1.0
+import QtQuick.FreeVirtualKeyboard 1.0
 import QtQuick.Window 2.0
 
 

@@ -61,7 +61,7 @@ VirtualKeyboardInputContext::VirtualKeyboardInputContext() :
     d->FlickableContentScrollAnimation->setPropertyName("contentY");
     d->FlickableContentScrollAnimation->setDuration(400);
     d->FlickableContentScrollAnimation->setEasingCurve(QEasingCurve(QEasingCurve::OutBack));
-    qmlRegisterSingletonType<DeclarativeInputEngine>("VirtualKeyboard", 1, 0,
+    qmlRegisterSingletonType<DeclarativeInputEngine>("FreeVirtualKeyboard", 1, 0,
         "InputEngine", inputEngineProvider);
     connect(d->InputEngine, SIGNAL(animatingChanged()), this, SLOT(ensureFocusedObjectVisible()));
 }
