@@ -1,2 +1,2 @@
-module QtQuick.VirtualKeyboard
+module QtQuick.FreeVirtualKeyboard
 InputPanel 1.0 InputPanel.qml
