@@ -1,11 +1,11 @@
 # QtFreeVirtualKeyboard
 A QML based on screen virtual keyboard for embedded QML applications. 
 
-The following video shows the Qt Free Virtual Keyboard running on my Beaglebone Black:
+The following video shows the QtFreeVirtualKeyboard running on my Beaglebone Black:
 
 [![Video Beaglebone Keyboard](doc/vk-beaglebone-video.jpg)](https://www.youtube.com/watch?v=TdzZyIXbn4U)
 
-This video is a screen capture from the Qt Free Virtual Keyboard running on a Windows PC:
+This video is a screen capture of the QtFreeVirtualKeyboard running on a Windows PC:
 
 [![Video Qt Freee Virtual Keyboard](doc/vk-screenshot-video.png)](https://www.youtube.com/watch?v=LqVUipeb96g)
 
