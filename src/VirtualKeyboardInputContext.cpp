@@ -187,6 +187,8 @@ void VirtualKeyboardInputContext::setFocusObject(QObject *object)
         {
             d->Flickable = Flickable;
             qDebug() << "is QQuickFlickable";
+            connect(d->Flickable, &QQuickItem::heightChanged, this,
+                    &VirtualKeyboardInputContext::ensureFocusedObjectVisible);
         }
         i = i->parentItem();
     }
