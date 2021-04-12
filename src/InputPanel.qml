@@ -17,6 +17,8 @@ Item {
     // Report actual keyboard rectangle to input engine
     onYChanged: InputEngine.setKeyboardRectangle(Qt.rect(x, y, width, height))
 
+    signal enterPressed()
+
     property font font: Qt.font(
         {
             family: 'Helvetica',
@@ -237,6 +239,12 @@ Item {
                     text: "\n"
                     font: root.font
                     inputPanel: root
+
+                    onPressed:
+                    {
+                        root.enterPressed();
+                    }
+
                 }
             }
         }
