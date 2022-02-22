@@ -17,6 +17,16 @@ Item {
     // Report actual keyboard rectangle to input engine
     onYChanged: InputEngine.setKeyboardRectangle(Qt.rect(x, y, width, height))
 
+    signal enterPressed()
+
+    property font font: Qt.font(
+        {
+            family: 'Helvetica',
+            weight: Font.Normal,
+            italic: false,
+            pointSize: 12
+        })
+
     KeyModel {
         id:keyModel
     }
@@ -43,6 +53,7 @@ Item {
             width: pimpl.buttonWidth
             height: pimpl.rowHeight
             text: (pimpl.shiftModifier) ? letter.toUpperCase() : (pimpl.symbolModifier)?firstSymbol : letter
+            font: root.font
             inputPanel: root
         }
     }
@@ -176,6 +187,7 @@ Item {
                     width: 1.25*pimpl.buttonWidth
                     height: pimpl.rowHeight
                     text: ""
+                    font: root.font
                     inputPanel: root
                     functionKey: true
                 }
@@ -183,6 +195,7 @@ Item {
                     width: pimpl.buttonWidth
                     height: pimpl.rowHeight
                     text: ","
+                    font: root.font
                     inputPanel: root
                 }
                 KeyButton {
@@ -190,6 +203,7 @@ Item {
                     width: 3*pimpl.buttonWidth
                     height: pimpl.rowHeight
                     text: " "
+                    font: root.font
                     inputPanel: root
                     showPreview: false
                 }
@@ -197,6 +211,7 @@ Item {
                     width: pimpl.buttonWidth
                     height: pimpl.rowHeight
                     text: "."
+                    font: root.font
                     inputPanel: root
                 }
                 KeyButton {
@@ -205,6 +220,7 @@ Item {
                     width: 1.25*pimpl.buttonWidth
                     height: pimpl.rowHeight
                     text: (!pimpl.symbolModifier)? "12#" : "ABC"
+                    font: root.font
                     functionKey: true
                     onClicked: {
                         if (pimpl.shiftModifier) {
@@ -221,7 +237,14 @@ Item {
                     height: pimpl.rowHeight
                     displayText: "Enter"
                     text: "\n"
+                    font: root.font
                     inputPanel: root
+
+                    onPressed:
+                    {
+                        root.enterPressed();
+                    }
+
                 }
             }
         }
